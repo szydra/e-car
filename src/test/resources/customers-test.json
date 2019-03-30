@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "vip": true
+  },
+  {
+    "id": 2,
+    "vip": true
+  },
+  {
+    "id": 3,
+    "vip": false
+  }
+]
