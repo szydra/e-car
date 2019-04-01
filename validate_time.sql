@@ -25,4 +25,4 @@ import java.sql.Statement;
     }
 $$;
 
-alter table price add constraint test_overlap check(VALIDATE_TIME(id, start_hour, end_hour));
+alter table price add constraint prevent_overlap check(VALIDATE_TIME(id, start_hour, end_hour));
