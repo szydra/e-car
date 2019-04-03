@@ -1,5 +1,6 @@
 package com.vattenfall.ecar.service;
 
+import com.vattenfall.ecar.exception.PriceException;
 import com.vattenfall.ecar.model.Price;
 import com.vattenfall.ecar.service.Intervals.TimeInterval;
 
