@@ -57,7 +57,7 @@ with request parameters:
 * `end` the end datetime of charging process,
 * `customer-id` id of an existing customer.
 
-Datetime values should be in lower precision ISO 8601 format, i.e. `YYYYMMDDTHHmm`.
+Datetime values should be in lower precision ISO 8601 format, i.e. `YYYYMMDDThhmm`.
 The calculated price is the value of `total` field in response body. For example a request to
 ```
 /prices?start=20190329T2040&end=20190330T0630&customer-id=customer1
@@ -76,3 +76,6 @@ which corresponds to the total price for customer with id *customer1* for chargi
 as `customers` key in `application.properties` file.
 2. A discount specified as `vip.discount` key in `application.properties` file is applied to vip customers,
 by default it is equal to *10%*.
+3. The application is vulnerable to concurrent data modification and in order to strengthen the data integrity
+in the database it is recommended to add an additional constraint. Sample definition of such
+a constraint for H2 can be found in `validate_time.sql` file.
