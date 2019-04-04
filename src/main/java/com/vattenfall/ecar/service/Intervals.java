@@ -46,7 +46,7 @@ class Intervals {
         // In case where two periods contain midnight, intersection is disconnected
         if (start1.isAfter(end1) && start2.isAfter(end2)) {
             return MINUTES.between(LocalTime.of(0, 0), earlier(end1, end2))
-                    + DAYS.getDuration().toMinutes() - MINUTES.between(LocalTime.of(0, 0), later(start1, end2));
+                    + DAYS.getDuration().toMinutes() - MINUTES.between(LocalTime.of(0, 0), later(start1, start2));
         }
         // We can assume that interval1 doesn't contain midnight
         if (start1.isAfter(end1)) {

@@ -74,6 +74,14 @@ public class IntervalsTest {
     }
 
     @Test
+    public void shouldCalculateIntersectionOfTwoIntervalsContainingMidnight2() {
+        TimeInterval interval1 = new TimeInterval(LocalTime.of(21, 30), LocalTime.of(8, 0));
+        TimeInterval interval2 = new TimeInterval(LocalTime.of(22, 0), LocalTime.of(5, 0));
+
+        assertThat(Intervals.intersectionInMinutes(interval1, interval2)).isEqualTo(7 * 60);
+    }
+
+    @Test
     public void shouldCalculateIntersectionWhenFirstIntervalContainsMidnight() {
         TimeInterval interval1 = new TimeInterval(LocalTime.of(22, 0), LocalTime.of(3, 15));
         TimeInterval interval2 = new TimeInterval(LocalTime.of(0, 30), LocalTime.of(1, 15));
