@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.Min;
+import javax.validation.constraints.DecimalMin;
 import java.time.LocalTime;
 
 /**
@@ -18,7 +18,7 @@ public class PriceDto {
 
     private Integer id;
 
-    @Min(0L)
+    @DecimalMin("0.0")
     private Double minuteRate;
 
     @JsonFormat(pattern = "HH:mm")
